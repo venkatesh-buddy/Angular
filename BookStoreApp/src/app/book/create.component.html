@@ -1,0 +1,14 @@
+<input [(ngModel)]="create.id" type=number>
+<button (click)="getBook(create)">Get Book Data</button>
+Hello <p>{{create.id}}</p>
+<button [disabled]=false (click)='actionEvent(create.id)'>Button</button>
+<ul>
+    <li *ngFor = "let b of allBooks">
+        {{b.name}}
+        </li>   
+</ul>
+<ol>
+    <li>
+        Data for {{fetch.id}}
+    </li> 
+    </ol>
