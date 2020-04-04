@@ -1,0 +1,30 @@
+<h2>CoronoVirus</h2>
+Fetch by no.of deaths : <input type="number"  [(ngModel)]="covidCount" />
+<br/>
+<br />
+<!--<button (click)="getDeathCountService(deathCount, listOfCountries)"> Get Death Count</button>!-->
+<span></span>
+<!--<button (click) ="getCovidSummaryService()"> Get Covid Countries</button>!-->
+<!--<ul>
+    <li *ngFor="let d1 of listOfCountries">
+        <span *ngIf="d1.Country.length > 0 ">            
+           {{d1.Country}} {{d1.Country.length}} 
+        </span>
+      
+    </li>
+    
+</ul>!-->
+
+<ul>
+    
+    <li *ngFor="let d1 of listOfCountries  | deathCount: covidCount" >
+     
+        <span style="color:navy"> <b> Country:</b>  {{d1.Country}}</span>,  <span style="color:red"><b>Total death count:</b> {{d1.TotalDeaths}}</span>
+     
+
+    </li>
+
+</ul>
+
+
+
