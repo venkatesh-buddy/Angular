@@ -1,0 +1,21 @@
+<p>
+    <a [routerLink] ="['/pages','1', 'page']">Page1</a>
+   <a [routerLink]="['/pages','2', 'page']">Page2</a>
+<!--      <a [routerLink]="['/pages',{id:2}, 'page']">Page2</a>    for optional parameter-->
+    <!-- <a [routerLink]="['/pages','3', 'page']">Page3</a> -->
+    <a (click)="routePage(3)" [routerLink]="[]">Page3</a> <!--navigate-->
+    <a [routerLink] ="['/home']" [queryParams]="{from: 'pageBack'}" queryParamsHandling="merge">Back</a>
+
+ 
+   
+</p>
+<ul>
+   <!--  <li *ngFor='let i of it'>
+        {{i.description}}
+    </li> -->
+
+    <li *ngFor='let i of user'>
+        Username: {{i.username}}
+    </li>
+</ul>
+
