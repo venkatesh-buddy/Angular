@@ -1,6 +1,16 @@
-<div class="wrapper d-flex align-items-stretch">
-  <app-menus></app-menus>
-<router-outlet></router-outlet>
+<!-- <div class="wrapper d-flex align-items-stretch"> -->
+<div class="container-fluid">
+  <div class="row" style="background-color:lightblue;"> 
+    <span style="margin-left:85%;">      
+      <app-header></app-header>
+    </span>
+  </div> 
+  <div class="row">
+    <div class="col-xs-3 col-md-2" style="background-color: black;">
+      <app-menus></app-menus>
+    </div>
+    <div class="col-xs-14 col-md-10" [@slideInOutAnimation] style="background-color:lightyellow;">      
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
-
-

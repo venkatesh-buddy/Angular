@@ -5,13 +5,16 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../service/user.service';
+import { TabContentComponent } from './page2/child/tab-content/tab-content.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [TabContentComponent],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    BrowserAnimationsModule
   ],
   providers : [UserService]
 })

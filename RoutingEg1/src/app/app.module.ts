@@ -15,7 +15,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user.service';
-
+import { NotifyComponent } from './notification/notify/notify.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './header/header/header.component';
 
 @NgModule({
   declarations: [
@@ -28,10 +30,13 @@ import { UserService } from './service/user.service';
     PortfolioComponent,
     ContactComponent,
     MenusComponent,
-    PageNotFoundComponent
+    NotifyComponent,
+    PageNotFoundComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     PagesModule,
     HttpClientModule

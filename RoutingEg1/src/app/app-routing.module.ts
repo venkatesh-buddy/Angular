@@ -4,9 +4,14 @@ import { HomeComponent } from './home/home.component';
 import { MenusComponent } from './sidebar/menus/menus.component';
 import { Page1Component } from './pages/page1/page1/page1.component';
 import { PageResolver } from './pages/page-resolver';
+import { BrowserModule } from '@angular/platform-browser';
+import { HeaderComponent } from './header/header/header.component';
+import { NotifyComponent } from './notification/notify/notify.component';
 
 
-const routes: Routes = [{ path: '', component: HomeComponent},
+const routes: Routes = [
+  { path: 'notify', component: NotifyComponent, outlet: 'popup' },
+  { path: '', component: HomeComponent},
   { path: 'pageSubmenu', component: Page1Component,
     resolve : {
       res : PageResolver
@@ -14,7 +19,8 @@ const routes: Routes = [{ path: '', component: HomeComponent},
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes
+  imports: [
+    RouterModule.forRoot(routes
     //,  { enableTracing: true }
      )],
   exports: [RouterModule],

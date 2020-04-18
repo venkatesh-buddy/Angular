@@ -1,0 +1,9 @@
+<ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="[{outlets: {popup:['notify']}}]" routerLinkActive="highlight" href="#">Messages</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Login</a>
+    </li>
+</ul>
+<router-outlet name="popup"></router-outlet>
