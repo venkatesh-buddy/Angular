@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { Page1Component } from './pages/page1/page1/page1.component';
 import { Page2Component } from './pages/page2/page2/page2.component';
@@ -18,11 +17,17 @@ import { UserService } from './service/user.service';
 import { NotifyComponent } from './notification/notify/notify.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header/header.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { ContentComponent } from './content/content.component';
+import { LandingComponent } from './landing/landing.component';
+
+
 
 @NgModule({
   declarations: [
+    LoginComponent,
     AppComponent,
-    HomeComponent,
     AboutComponent,
     Page1Component,
     Page2Component,
@@ -32,14 +37,17 @@ import { HeaderComponent } from './header/header/header.component';
     MenusComponent,
     NotifyComponent,
     PageNotFoundComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContentComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     PagesModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-menus',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: []
 })
 export class MenusComponent implements OnInit {
-
-  constructor() { }
+  logged: string;
+  constructor(private auth: AuthService) {
+    console.log('MenusComponent::' + this.auth.getLoggedIn());
+    this.logged = this.auth.getLoggedIn();
+  }
 
   ngOnInit() {
   }

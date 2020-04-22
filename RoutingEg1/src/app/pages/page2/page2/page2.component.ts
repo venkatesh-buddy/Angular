@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { slideInOutAnimation } from 'src/app/animation';
+import { AuthService } from 'src/app/service/auth.service';
 
 
 @Component({
@@ -10,8 +11,9 @@ import { slideInOutAnimation } from 'src/app/animation';
   animations: [slideInOutAnimation]
 })
 export class Page2Component implements OnInit {
-
-  constructor(private router: Router, private activeRoute: ActivatedRoute) {
+  logged: string;
+  constructor(private router: Router, private activeRoute: ActivatedRoute, private auth: AuthService) {
+    this.logged = this.auth.getLoggedIn();
   }
 
   ngOnInit() {
