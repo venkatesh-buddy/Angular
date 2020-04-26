@@ -13,8 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [TabContentComponent],
   imports: [
     CommonModule,
-    PagesRoutingModule,
-    BrowserAnimationsModule
+    PagesRoutingModule    
   ],
   providers : [UserService]
 })
