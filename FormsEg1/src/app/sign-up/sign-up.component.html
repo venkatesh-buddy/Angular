@@ -1,0 +1,70 @@
+<div class="panel panel-primary" style="margin:20px;">
+    <div class="panel-heading">
+        <h3 class="panel-title">Registration Form</h3>
+    </div>
+    <div class="panel-body">
+        <form #frm="ngForm" (ngSubmit)="save(frm)">
+            <div class="col-md-12 col-sm-12">
+                <div class="form-group col-md-6 col-sm-6">
+                    <label for="name">Name* </label>
+                    <input type="text" class="form-control input-sm" id="name" required [(ngModel)]="signUpModel.name" name ="name" #nameField=ngModel
+                    [ngClass]="{'is-invalid':!nameField.valid}">
+                    <span *ngIf="!nameField.valid">
+                    Enter value
+                        </span>
+                </div>
+                
+                <div class="form-group col-md-6 col-sm-6">
+                    <label for="email">Email*</label>
+                    <input type="email" class="form-control input-sm" id="email" name="email" [(ngModel)]="signUpModel.email">
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6">
+                    <label for="mobile">Mobile*</label>
+                    <input type="text" class="form-control input-sm" id="mobile" name="mobile" [(ngModel)]="signUpModel.mobile">
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6">
+                    <label for="address">Address*</label>
+                    <textarea class="form-control input-sm" id="address" rows="3" name="address" [(ngModel)]="signUpModel.address"></textarea>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6">
+                    <label for="city">City*</label>
+                    <input type="text" class="form-control input-sm" id="city" name="city" [(ngModel)]="signUpModel.city">
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6">
+                    <label for="state">State*</label>
+                    <input type="text" class="form-control input-sm" id="state" name="state" [(ngModel)]="signUpModel.state">
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6">
+                    <label for="country">Country*</label>
+                    <input type="text" class="form-control input-sm" id="country" name="country" [(ngModel)]="signUpModel.country">
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6">
+                    <label for="pincode">Pincode</label>
+                    <input type="text" class="form-control input-sm" id="pincode" name="pincode" [(ngModel)]="signUpModel.pincode">
+                </div>         
+
+              
+            </div>
+                      
+            <div class="col-md-12 col-sm-12">
+                <div class="form-group col-md-3 col-sm-3 pull-right">
+                     <input type="submit" class="btn btn-primary" />
+                   <!-- <button class="btn btn-primary">Send</button>-->
+                   
+                </div>
+            </div>
+        </form>      
+    </div>  
+    Dirty: {{frm.dirty| json}}
+    Touched: {{frm.touched|json}}    
+    Pristine: {{frm.pristine| json}}
+    Valid: {{frm.valid| json}}
+
+    
+
