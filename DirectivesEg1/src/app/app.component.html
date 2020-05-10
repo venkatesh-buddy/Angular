@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="toggle(onlyodd)">{{buttonLabel}}</button>
+      <br>
+      <br>
+      <ul class="list-group">
+        <div *ngIf="onlyodd">
+          <li class="list-group-item" [ngClass]="{odd: odd % 2 !== 0}"
+            [ngStyle]="{backgroundColor: odd % 2 !== 0?'yellow':'transparent'}" *ngFor="let odd of oddNumbers">
+            {{odd}}
+          </li>
+        </div>
+        <!-- <div *ngIf="!onlyodd"> -->
+          <div *appUnless= "onlyodd"> <!--Custom structural directive-->
+            {{'Hello'}}
+          <li class="list-group-item" [ngClass]="{odd: even % 2 !== 0}"
+            [ngStyle]="{backgroundColor: even%2==0?'skyblue':'transparent'}" *ngFor="let even of evenNumbers">
+            {{even}}
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+<b> ngSwitch</b>
+<div [ngSwitch]="value">
+    <p *ngSwitchCase="10">10</p>
+    <p *ngSwitchCase="20">20</p>
+    <p *ngSwitchDefault>Default</p>
+</div>
+<p customDirectiveHighLighter> Custom Directive</p>
+<!--If the target of the application is not browser use renderer. Chances will throw
+ error in custom directive use renderer if its used in mobile -->
+
+ <p appBetterDirective > Renderer Directive over the mouse here</p>
+
+ <!-- to pass the values to @input  send from inside P tag-->
+<!-- <p appBetterDirective [defaultColor]="'yellow'" [highlightColor]="'red'"> Renderer Directive over the mouse here</p> -->
